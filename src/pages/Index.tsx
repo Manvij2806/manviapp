@@ -1,11 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import ClockWidget from '@/components/ClockWidget';
+import WeatherWidget from '@/components/WeatherWidget';
+import TimetableWidget from '@/components/TimetableWidget';
+import TodoWidget from '@/components/TodoWidget';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="w-[480px] h-[320px] bg-background p-2 overflow-hidden mx-auto">
+      <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
+        {/* Top Left - Clock */}
+        <div className="col-span-1 row-span-1">
+          <ClockWidget />
+        </div>
+        
+        {/* Top Right - Weather */}
+        <div className="col-span-1 row-span-1">
+          <WeatherWidget />
+        </div>
+        
+        {/* Bottom Left - Timetable */}
+        <div className="col-span-1 row-span-1">
+          <TimetableWidget />
+        </div>
+        
+        {/* Bottom Right - Todo */}
+        <div className="col-span-1 row-span-1">
+          <TodoWidget />
+        </div>
       </div>
     </div>
   );
